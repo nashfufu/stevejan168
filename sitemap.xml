@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://stevejan168.pages.dev/sitechinese</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://stevejan168.pages.dev/sitechinese"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stevejan168.pages.dev/siteenglish"/>
+  </url>
+  <url>
+    <loc>https://stevejan168.pages.dev/siteenglish</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://stevejan168.pages.dev/sitechinese"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://stevejan168.pages.dev/siteenglish"/>
+  </url>
+</urlset>
