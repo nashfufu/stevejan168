@@ -131,6 +131,16 @@
   </script>
 
   <style>
+
+    .brand{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+    .brand-item{display:flex;align-items:center;gap:8px;color:inherit;text-decoration:none}
+    .brand-item img{height:28px;width:auto;display:block;border-radius:6px}
+    .brand-item.sub img{height:24px;opacity:.95}
+    @media (max-width:640px){
+      .brand{gap:10px}
+      .brand-item span{display:none;} /* 行動裝置只顯示圖示，避免擠壓 */
+    }
+
     :root{
       --bg:#0f1221; --fg:#f2f5ff; --muted:#c7cbe6; --brand:#7cc4ff; --accent:#a5f3fc; --card:#171a30;
     }
@@ -166,6 +176,16 @@
 <body>
   <div class="wrap">
     <header>
+      <div class="brand">
+        <a href="/" class="brand-item" aria-label="合一覺醒 ONE">
+          <img src="logo-one.jpg" alt="合一覺醒 ONE 商標">
+          <span>合一覺醒</span>
+        </a>
+        <a href="#about" class="brand-item sub" aria-label="心靈氣功">
+          <img src="logo-qigong.jpg" alt="心靈氣功 商標">
+          <span>心靈氣功</span>
+        </a>
+      </div>
       <span class="badge">心靈氣功 • 合一覺醒</span>
       <h1>系統化身心靈課程｜氣功疏通經絡、任督二脈｜心靈轉化 × 量子訊息場</h1>
       <p class="lead">以氣功排除濁氣、轉化低頻訊息場，補充元氣與能量，達到身心靈健康喜悅之養生之道，邁向身心靈合一的境界！</p>
@@ -295,6 +315,7 @@
   </script>
 </body>
 </html>
+
 
 
 
