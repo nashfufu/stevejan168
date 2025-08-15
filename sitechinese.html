@@ -168,12 +168,12 @@
     }
 
     :root {
-      --bg: #0f1221;
-      --fg: #f2f5ff;
-      --muted: #c7cbe6;
-      --brand: #7cc4ff;
-      --accent: #a5f3fc;
-      --card: #171a30;
+      --bg: #ffffff;      /* 白底 */
+      --fg: #5c4033;      /* 咖啡色主文字 */
+      --muted: #8b6f61;   /* 淺咖啡輔助文字 */
+      --brand: #a0522d;   /* 深咖啡品牌色 */
+      --accent: #d2b48c;  /* 米色點綴 */
+      --card: #faf6f3;    /* 淺米色卡片背景 */
     }
     
     html, body {
@@ -194,151 +194,40 @@
       text-decoration: underline;
     }
     
-    .wrap {
-      max-width: 1100px;
-      margin: auto;
-      padding: 24px;
-    }
-    
-    header {
-      padding: 56px 0 24px;
-    }
-    
     .badge {
-      display: inline-block;
       background: linear-gradient(90deg, var(--brand), var(--accent));
-      color: #001421;
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-weight: 700;
-      letter-spacing: .04em;
-    }
-    
-    h1 {
-      font-size: clamp(28px, 4vw, 40px);
-      line-height: 1.25;
-      margin: 16px 0;
-    }
-    
-    .lead {
-      font-size: clamp(16px, 2.1vw, 18px);
-      color: var(--muted);
-    }
-    
-    .cta {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 18px;
+      color: #fffaf0; /* 米白字 */
     }
     
     .btn {
-      background: linear-gradient(90deg, #66d1ff, #a5f3fc);
-      color: #001421;
-      padding: 12px 18px;
-      border-radius: 14px;
-      font-weight: 800;
-      border: 0;
-      cursor: pointer;
+      background: linear-gradient(90deg, var(--brand), var(--accent));
+      color: #fffaf0;
     }
     
     .btn.secondary {
-      background: #253056;
+      background: var(--accent);
       color: var(--fg);
-    }
-    
-    section {
-      margin: 48px 0;
-    }
-    
-    .grid {
-      display: grid;
-      gap: 18px;
-    }
-    
-    .grid.cols-2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    
-    .grid.cols-3 {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-    
-    @media (max-width: 900px) {
-      .grid.cols-2,
-      .grid.cols-3 {
-        grid-template-columns: 1fr;
-      }
     }
     
     .card {
       background: var(--card);
-      border: 1px solid #262a49;
-      border-radius: 18px;
-      overflow: hidden;
-    }
-    
-    .card h3 {
-      margin: 0;
-      padding: 16px 16px 0;
-    }
-    
-    .card p {
-      color: var(--muted);
-      padding: 0 16px 16px;
-      margin: 0;
-    }
-    
-    .video {
-      position: relative;
-      aspect-ratio: 16/9;
-      width: 100%;
-    }
-    
-    .video iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    
-    .list {
-      list-style: none;
-      padding-left: 18px;
-    }
-    
-    .list li {
-      margin: 10px 0;
+      border: 1px solid #e0d4c8;
     }
     
     footer {
-      border-top: 1px dashed #2b3159;
-      color: #aab1da;
-      padding: 28px 0 48px;
-      margin-top: 24px;
-    }
-    
-    .social a {
-      margin-right: 14px;
+      border-top: 1px dashed #c4a484;
+      color: var(--muted);
     }
     
     .pill {
-      display: inline-block;
-      border: 1px solid #2b3159;
-      border-radius: 999px;
-      padding: 6px 10px;
-      color: #c7cbe6;
-      margin-right: 8px;
+      border: 1px solid #c4a484;
+      color: var(--muted);
     }
     
     .hero-img {
-      width: 100%;
-      max-height: 420px;
-      object-fit: cover;
-      border-radius: 18px;
-      border: 1px solid #262a49;
+      border: 1px solid #e0d4c8;
     }
+
 
 
   </style>
@@ -523,6 +412,7 @@
   </script>
 </body>
 </html>
+
 
 
 
