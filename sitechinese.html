@@ -490,6 +490,32 @@
       </div>
     </section>
 
+    <section id="signup-form" style="scroll-margin-top:80px;">
+      <h2>線上報名表單</h2>
+      <p class="lead">不想加 LINE？也可以直接填寫以下表單報名，我們會盡快與您聯繫。</p>
+    
+      <!-- ✅ 請把下面的 FORM_ID 換成你的 Google Form 真實 ID -->
+      <!-- 取得方式：打開你的短網址（forms.gle/...）→ 右上「更多」→ 取得嵌入碼，URL 會像 docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true -->
+      <div class="card" style="padding:0;border-radius:18px;overflow:hidden">
+        <iframe
+          src="https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true"
+          width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0"
+          loading="lazy" title="心靈氣功 • 合一覺醒 線上報名表單">
+          載入中…
+        </iframe>
+      </div>
+    
+      <!-- 失敗備援 & 追蹤點 -->
+      <p style="margin-top:10px">
+        若表單無法載入，請改用此連結填寫：
+        <a id="form-fallback" href="https://forms.gle/bU9dixVHjYqWcqFy5" target="_blank" rel="noopener">
+          開啟 Google 表單
+        </a>
+      </p>
+      <small style="color:#7a6e61">送出即代表同意我們僅將聯絡資料用於課程諮詢，且不做任何不相關用途。</small>
+    </section>
+
+
 
     <footer>
       <div class="grid cols-2">
@@ -560,6 +586,7 @@
   </script>
 </body>
 </html>
+
 
 
 
