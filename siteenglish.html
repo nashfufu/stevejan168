@@ -166,33 +166,25 @@
   </script>
 
   <style>
-    .fab-container {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 9999;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    .fab-container{
+      position:fixed;bottom:20px;right:20px;z-index:9999;
+      display:flex;flex-direction:column;gap:10px
     }
-    
-    .fab-button {
-      background: linear-gradient(135deg, #ff6f61, #ffcc70);
-      color: white;
-      border: none;
-      border-radius: 999px;
-      padding: 12px 18px;
-      font-size: 14px;
-      font-weight: bold;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.2s;
+    .fab-button{
+      display:block;padding:12px 16px;border-radius:999px;
+      font-weight:800;font-size:14px;line-height:1;
+      color:#fff;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.18);
+      transition:transform .15s ease,opacity .15s ease,box-shadow .15s ease;
+      border:0;outline:0
     }
-    
-    .fab-button:hover {
-      transform: scale(1.05);
-    }
+    .fab-button:hover,.fab-button:focus{transform:translateY(-1px);box-shadow:0 10px 24px rgba(0,0,0,.22)}
+    .fab--wish{background:linear-gradient(135deg,#ffb347,#ffcc33)}
+    .fab--one{background:linear-gradient(135deg,#6c63ff,#9a8cff)}
+    .fab--line{background:linear-gradient(135deg,#06c755,#28d17c)}
+    .fab--signup{background:linear-gradient(135deg,#a0522d,#deb887)}
+    /* 可選：改成左下角，把 right 換成 left */
+    @media (max-width:480px){ .fab-container{bottom:14px;right:14px} .fab-button{font-size:13px;padding:11px 14px} }
+    @media (prefers-reduced-motion: reduce){ .fab-button{transition:none} }
   </style>
 
 
@@ -496,9 +488,37 @@
         <small style="color:#7a6e61;">Course content and philosophy provided by “Spiritual Qigong • Awakening Unity / Steve Jan”. BoostAEO focuses on technical performance, SEO, and AI search optimization. Business, brand, or agency collaboration welcome.</small>
       </div>
 
-      <div class="fab-container">
-        <a class="fab-button" href="https://one-bsf.pages.dev/EN/" target="_blank" rel="noopener">🗣️ Talk Anonymously</a>
-        <a class="fab-button" href="https://dessert365shop.com/px/wish/indexEN.html" target="_blank" rel="noopener">🌠 Make a Wish</a>
+      <!-- === FAB (place HTML before </body>) === -->
+      <div class="fab-container" role="navigation" aria-label="Quick actions">
+        <!-- ToFu -->
+        <a class="fab-button fab--wish"
+           href="https://dessert365shop.com/px/wish/indexEN.html"
+           target="_blank" rel="noopener"
+           aria-label="Make a Wish: 365-day online wishing ritual">
+          🌟 Make a Wish in the Mirror of Your Soul
+        </a>
+        <a class="fab-button fab--one"
+           href="https://one-bsf.pages.dev/EN/"
+           target="_blank" rel="noopener"
+           aria-label="Confess Anonymously on ONE">
+          🎧 Confess Anonymously
+        </a>
+      
+        <!-- MoFu -->
+        <a class="fab-button fab--line"
+           href="https://line.me/ti/p/8vKhl8mo9U"
+           target="_blank" rel="noopener"
+           aria-label="Contact via LINE for Spiritual Qigong inquiries">
+          💬 LINE • Inquiry
+        </a>
+      
+        <!-- BoFu -->
+        <a class="fab-button fab--signup"
+           href="https://forms.gle/bU9dixVHjYqWcqFy5"
+           target="_blank" rel="noopener"
+           aria-label="Register for Spiritual Qigong via Google Form">
+          📝 Register • Spiritual Qigong
+        </a>
       </div>
 
     </footer>
@@ -534,6 +554,7 @@
   </script>
 </body>
 </html>
+
 
 
 
