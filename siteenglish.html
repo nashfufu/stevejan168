@@ -633,6 +633,98 @@
 
   </div>
 
+
+  <!-- ===== GA4 Events: Buttons / Tabs / Videos / FAB ===== -->
+  <script>
+  /* ===== Helpers ===== */
+  function sendEvent(eventName, params = {}) {
+    if (typeof gtag !== "undefined") {
+      gtag("event", eventName, params);
+    }
+  }
+  
+  /* ===== CTA Buttons ===== */
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      sendEvent("cta_click", {
+        button_text: btn.innerText.trim(),
+        button_target: btn.getAttribute('href')
+      });
+    });
+  });
+  
+  /* ===== FAB Buttons ===== */
+  document.querySelectorAll('.fab-button').forEach(fab => {
+    fab.addEventListener('click', () => {
+      sendEvent("fab_click", {
+        button_text: fab.innerText.trim(),
+        button_target: fab.getAttribute('href')
+      });
+    });
+  });
+  
+  /* ===== LINE / Google 表單 ===== */
+  document.querySelectorAll('a[href*="line.me"], a[href*="forms.gle"]').forEach(el => {
+    el.addEventListener('click', () => {
+      sendEvent("external_signup_click", {
+        link: el.getAttribute("href")
+      });
+    });
+  });
+  
+  /* ===== Tabs 切換 ===== */
+  document.querySelectorAll('[role="tab"]').forEach(tab => {
+    tab.addEventListener('click', () => {
+      sendEvent("tab_switch", {
+        tab_name: tab.innerText.trim()
+      });
+    });
+  });
+  
+  /* ===== YouTube 影片曝光追蹤（10% / 50% / 90%） ===== */
+  let videoObservers = [];
+  
+  document.querySelectorAll('iframe[src*="youtube"]').forEach((iframe, idx) => {
+    let thresholds = [0.1, 0.5, 0.9]; 
+    let sent = { 0.1: false, 0.5: false, 0.9: false };
+  
+    let observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          thresholds.forEach(t => {
+            if (entry.intersectionRatio >= t && !sent[t]) {
+              sendEvent("video_exposure", {
+                video_iframe: iframe.src,
+                exposure: t
+              });
+              sent[t] = true;
+            }
+          });
+        }
+      });
+    }, { threshold: thresholds });
+  
+    observer.observe(iframe);
+    videoObservers.push(observer);
+  });
+  
+  /* ===== Scroll Depth ===== */
+  let scrollSent = false;
+  window.addEventListener('scroll', () => {
+    if (!scrollSent) {
+      const scrollTop = window.scrollY;
+      const fullHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = scrollTop / fullHeight;
+  
+      if (scrollPercent > 0.3) {
+        sendEvent("scroll_30%");
+        scrollSent = true;
+      }
+    }
+  });
+  </script>
+
+
   <script>
     // 動態年份
     document.getElementById('y').textContent = new Date().getFullYear();
@@ -662,6 +754,7 @@
   </script>
 </body>
 </html>
+
 
 
 
