@@ -1,25 +1,21 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <!-- 不需要被搜尋收錄（避免重複內容） -->
-  <meta name="robots" content="noindex, nofollow">
-
-  <title>Redirecting…</title>
-
-  <!-- HTML 層級的立即跳轉 -->
-  <meta http-equiv="refresh" content="0; url=https://stevejan168.neocities.org/">
-
-  <!-- SEO 標準：canonical 指向新站 -->
-  <link rel="canonical" href="https://stevejan168.neocities.org/">
-
-  <!-- JS fallback（防止某些瀏覽器阻擋 meta refresh） -->
-  <script>
-    window.location.replace("https://stevejan168.neocities.org/");
-  </script>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>Redirecting...</title>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const userLang = navigator.language || navigator.userLanguage;
+    if (userLang && userLang.toLowerCase().indexOf('zh') === 0) {
+      window.location.href = "https://stevejan168.pages.dev/sitechinese";
+    } else {
+      window.location.href = "https://stevejan168.pages.dev/siteenglish";
+    }
+  });
+</script>
 </head>
 <body>
-  <p>Redirecting…</p>
+<p>Redirecting to the appropriate language site...</p>
 </body>
 </html>
