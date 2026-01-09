@@ -4,17 +4,25 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex">
 <title>Redirecting...</title>
+
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const userLang = navigator.language || navigator.userLanguage;
-    if (userLang && userLang.toLowerCase().indexOf('zh') === 0) {
-      window.location.href = "https://stevejan168.pages.dev/sitechinese";
-    } else {
-      window.location.href = "https://stevejan168.pages.dev/siteenglish";
-    }
-  });
+document.addEventListener("DOMContentLoaded", function () {
+  var userLang = navigator.language || navigator.userLanguage || '';
+  userLang = userLang.toLowerCase();
+
+  if (userLang.indexOf('zh') === 0) {
+    window.location.replace("/sitechinese/");
+  } else {
+    window.location.replace("/siteenglish/");
+  }
+});
 </script>
+
+<noscript>
+  <meta http-equiv="refresh" content="0;url=/siteenglish/">
+</noscript>
 </head>
+
 <body>
 <p>Redirecting to the appropriate language site...</p>
 </body>
